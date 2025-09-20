@@ -1,0 +1,31 @@
+#algoritma 1
+
+#step 1: input nilai awal adalah angka yang paling besar
+x_awal1 = 10000.0
+
+#step 2: input nilai selanjutnya adlah angka yang kecil
+x_selanjutnya1 = 0.0001
+
+#step 3: melakukan perulangan
+for _ in range(5):
+  x_awal1 += x_selanjutnya1
+
+#cetak hasil
+print ("hasil penjumlahan algoritma 1 adalah:", x_awal1)
+
+__________________________________________________________________
+
+#algoritma 2
+
+#Total2
+Total2 = 0.0
+
+#step 1: input nilai awal adalah angka yang kecil
+x_awal2 = 0.0001
+
+#melakukan perulangan sebanyak 5 kali
+for _ in range(5):
+  Total2 += x_awal2
+Total2 += 10000.0
+#cetak hasil
+print ("hasil penjumlahan algoritma 2 adalah:", Total2)
