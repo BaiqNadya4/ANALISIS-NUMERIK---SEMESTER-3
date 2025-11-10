@@ -10,9 +10,7 @@ def f(x):
 def f_turunan(x):
     return 3*x**2 + 2*x - 3
 
-# ----------------------------------------------------------------------
 # METODE NEWTON-RAPHSON
-# ----------------------------------------------------------------------
 def newton_raphson(x0, tol=1e-6, max_iter=100):
     print("Iterasi\t   x\t\t   f(x)")
     nilai_x = []
@@ -44,9 +42,7 @@ def newton_raphson(x0, tol=1e-6, max_iter=100):
 # akar_newton, nilai_x_newton = newton_raphson(3)
 
 
-# ----------------------------------------------------------------------
 # METODE BISEKSI
-# ----------------------------------------------------------------------
 def bisection(a, b, tol=1e-6, max_iter=100):
     fa, fb = f(a), f(b)
     if fa * fb > 0:
@@ -81,9 +77,7 @@ def bisection(a, b, tol=1e-6, max_iter=100):
 # akar_biseksi, hist_biseksi = bisection(1, 2, tol=1e-6, max_iter=100)
 
 
-# ----------------------------------------------------------------------
 # METODE SECANT
-# ----------------------------------------------------------------------
 def secant(x0, x1, tol=1e-6, max_iter=100):
   print("Iterasi\t   x0\t\t   x1\t\t   x2\t\tf(x2)")
   nilai_x = []
@@ -112,9 +106,7 @@ def secant(x0, x1, tol=1e-6, max_iter=100):
 # akar_secant, nilai_x_secant = secant(2, 3)
 
 
-# ----------------------------------------------------------------------
 # FUNGSI PLOT VISUALISASI ITERASI
-# ----------------------------------------------------------------------
 def plot_iterasi(nilai_x, metode):
     x_vals = np.linspace(-5, 5, 100)
     y_vals = f(x_vals)
