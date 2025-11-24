@@ -1,0 +1,39 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import linregress
+
+# 1. Data input
+x = np.array([10, 20, 30, 40])
+y = np.array([2.5, 4.0, 5.0, 6.5])
+
+# 2. Hitung regresi linear menggunakan scipy
+slope, intercept, r_value, p_value, std_err = linregress(x, y)
+
+# 3. Output hasil
+a = intercept
+b = slope
+print("Hasil Regresi Linear Sederhana")
+print("Intercept (a):", a, "≈ 4E-1")
+print("Slope (b):", b, "≈ 4E-1")
+
+# Persamaan garis regresi terbaik
+regresi_equation = f"y = {a:.4f} + {b:.4f}x"
+print(f"\nPersamaan garis regresi terbaik: {regresi_equation}")
+print(f"{regresi_equation}")
+
+# Fungsi garis regresi
+def predict(x_val, a, b):
+    return a + b * x_val
+
+x_regresi = np.linspace(min(x) - 5, max(x) + 5, 100)
+y_regresi = predict(x_regresi, a, b)
+
+plt.figure(figsize=(10, 6))
+plt.scatter(x, y, color='red', label='Titik Data', zorder=5)
+plt.plot(x_regresi, y_regresi, color='blue', label=f'Garis Regresi: {regresi_equation}', linewidth=2)
+plt.title('Regresi Linear: Neuron Aplikasi vs Waktu Muat')
+plt.xlabel('Ukuran Aplikasi (x, MB)')
+plt.ylabel('Waktu Muat (y, detik)')
+plt.grid(True, linestyle='--')
+plt.legend()
+plt.show()
